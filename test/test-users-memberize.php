@@ -18,7 +18,8 @@ $ca = new CityApi();
 $ca->debug = true;
 $ca->json = true;
 
-$results = $ca->users_memberize(837555);
+//$results = $ca->users_memberize(238801); // simple case
+$results = $ca->users_memberize(238801, array('member_since' => '1988-01-01'));
 
 echo "<h2>results:</h2>$results";
 

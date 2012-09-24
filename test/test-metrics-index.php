@@ -4,51 +4,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<title>Test Barcodes Show</title>
+</style>
+<title>Test Metrics Index</title>
 </head>
-
 <body>
 <?php
 require_once('test-util.php'); 
 require_once(dirname(__FILE__) . '/../lib/ca-main.php'); 
-
 echo '<div class="apitest">';
-echo '<h1>barcodes_show()</h1>';
+echo '<h1>metrics_index</h1>';
 
 $ca = new CityApi();
 $ca->debug = true;
 $ca->json = true;
 
-echo '<h2>Test: </h2>';
-$barcode = '7055'; // actual barcode
-//$barcode = '033E73B673'; // 404 not found
-//$barcode = 'DEE97714A2'; // 404 not found
-$results = $ca->barcodes_show($barcode); 
-
-//echo "<h2>results:</h2>$results";
-//echo '<h2>var_dump results:</h2>';
-//var_dump($results);
-
+$results = $ca->metrics_index();
 echo '<h2>Formatted JSON results: </h2>';
 echo '<pre>';
 echo format_json($results);
 echo '</pre>';
 
-echo '<h2>Test: </h2>';
-$barcode = '105813'; // barcode id
-$results = $ca->barcodes_show($barcode); 
-
-//echo "<h2>results:</h2>$results";
-//echo '<h2>var_dump results:</h2>';
-//var_dump($results);
-
+$args = array('page' => 1);
+$results = $ca->metrics_index($args);
 echo '<h2>Formatted JSON results: </h2>';
 echo '<pre>';
 echo format_json($results);
 echo '</pre>';
 
-echo '</div>';
 ?>
-
 </body>
 </html>

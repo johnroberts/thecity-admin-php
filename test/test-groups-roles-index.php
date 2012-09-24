@@ -20,9 +20,9 @@ $ca->debug = true;
 $ca->json = true;
 
 echo '<h2>Test: </h2>';
-//$groupid = 43681;
-$groupid = 33150;
-$results = $ca->groups_roles_index($groupid, array('title' => 'Leaders')); 
+$groupid = 43682;
+//$groupid = 33150;
+$results = $ca->groups_roles_index($groupid, array('title' => 'Participants')); 
 
 //echo "<h2>results:</h2>$results";
 //echo '<h2>var_dump results:</h2>';

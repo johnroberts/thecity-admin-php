@@ -3,17 +3,9 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--<link rel="stylesheet" type="text/css" href="css/style.css" />-->
-<style type="text/css">
-.apitest {
-font-family: monospace;
-}
-.ca-debug {
-margin: 0;
-background-color:#E0EEEE;
-}
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 </style>
-<title>Test Users Memberize</title>
+<title>Test Users Show</title>
 </head>
 <body>
 <?php
@@ -26,6 +18,28 @@ $ca = new CityApi();
 $ca->debug = true;
 $ca->json = true;
 $results = $ca->users_show('224870');
+
+echo '<h2>var_dump results:</h2>';
+echo '<pre>';
+var_dump($results);
+echo'</pre>';
+
+echo '<h2>Formatted JSON results: </h2>';
+echo '<pre>';
+echo format_json($results);
+echo '</pre>';
+
+echo '<h2>var_dump last response start line:</h2>';
+var_dump($ca->get_last_response_start_line());
+echo '<h2>var_dump last headers:</h2>';
+echo '<pre>';
+echo var_dump($ca->get_last_headers());
+echo '</pre>';
+
+echo "<h2>Test with optional parameters:</h2>";
+//$args = array( 'include_participation' => 'true', 'include_custom_fields' => 'true'); // this fails with signature authentication error
+$args = array( 'include_custom_fields' => 'true', 'include_participation' => 'true');  // args in alphabetical order
+$results = $ca->users_show('224870', $args);
 echo "<h2>results:</h2>$results";
 
 echo '<h2>var_dump results:</h2>';

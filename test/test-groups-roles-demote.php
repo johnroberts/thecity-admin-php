@@ -4,42 +4,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<title>Test Users Update</title>
+<title>Test Groups Roles Demote</title>
 </head>
 
 <body>
 <?php
 require_once('test-util.php'); 
 require_once(dirname(__FILE__) . '/../lib/ca-main.php'); 
+
 echo '<div class="apitest">';
-echo '<h1>users_update</h1>';
+echo '<h1>groups_roles_demote</h1>';
 
 $ca = new CityApi();
-
 $ca->debug = true;
 $ca->json = true;
 
-// fail, no parameters
-echo '<h2>Fail test, no parameters: </h2>';
-$results = $ca->users_update(); 
-echo "<h2>results:</h2>$results";
+$groupid = 43682; 
+//$userid = 238801;
+$roleid = 986632;
 
-echo '<h2>Test: </h2>';
-$userid = 844660;
-$results = $ca->users_update($userid,
-							 array( 'first'=>'Luke', 
-									'last'=>'Skywalker', 
-									'gender'=>'Male', 
-									'email'=>'luke.skywalker@gcconline.org', 
-									'primary_phone'=>'301-555-1214', 
-									'primary_phone_type'=>'Home'));
+$args = array('title' => 'Participant');
+$results = $ca->groups_roles_demote($groupid, $roleid, $args); 
 
 echo '<h2>Formatted JSON results: </h2>';
 echo '<pre>';
 echo format_json($results);
-echo '</pre>';
 
+echo '</pre>';
 echo '</div>';
 ?>
+
 </body>
 </html>

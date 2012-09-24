@@ -48,14 +48,12 @@ echo '<br />';
 $ca->debug = true;
 $ca->json = true;
 $results = $ca->users_index(array('page'=>'1', 'filter'=>'created_in_the_last_7_days'));
-echo "<h2>results:</h2>$results";
 echo '<h2>Formatted JSON results: </h2>';
 echo '<pre>';
 echo format_json($results);
 echo '</pre>';
 
 $results = $ca->users_index(array('filter'=>'created_in_the_last_7_days', 'page'=>'1'));
-echo "<h2>results:</h2>$results";
 echo '<h2>Formatted JSON results: </h2>';
 echo '<pre>';
 echo format_json($results);

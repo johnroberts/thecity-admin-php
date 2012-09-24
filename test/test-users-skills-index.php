@@ -22,11 +22,6 @@ $ca->json = true;
 $userid = 238801;
 $results = $ca->users_skills_index($userid); 
 
-echo "<h2>results:</h2>$results";
-
-echo '<h2>var_dump results:</h2>';
-var_dump($results);
-
 echo '<h2>Formatted JSON results: </h2>';
 echo '<pre>';
 echo format_json($results);

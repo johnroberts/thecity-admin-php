@@ -20,7 +20,7 @@ $ca->debug = true;
 $ca->json = true;
 
 echo '<h2>Test: </h2>';
-$groupid = 43681;
+$groupid = 43682;
 $results = $ca->groups_roles_create($groupid, array('user_id' => '238801', 'title' => 'Manager')); 
 
 //echo "<h2>results:</h2>$results";

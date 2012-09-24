@@ -19,8 +19,8 @@ $ca = new CityApi();
 $ca->debug = true;
 $ca->json = true;
 
-$userid = 837591;
-$role = "Child";
+$userid = 713959;
+$role = "LegalChild";
 $args = array ('family_role' => $role);
 $results = $ca->users_family_update($userid, $args); 
 
