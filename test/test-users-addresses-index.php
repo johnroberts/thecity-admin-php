@@ -19,7 +19,7 @@ $ca = new CityApi();
 $ca->debug = true;
 
 $ca->json = true;
-$userid = 837592;
+$userid = 238801;
 $page = 1;
 $results = $ca->users_addresses_index($userid, array('page' => $page));
 
@@ -36,7 +36,7 @@ echo format_json($results);
 echo '</pre>';
 
 $ca->json = false;
-$results = $ca->users_addresses_index(837592);
+$results = $ca->users_addresses_index(238801);
 echo '<h2>var_dump results:</h2>';
 echo '<pre>';
 var_dump($results);

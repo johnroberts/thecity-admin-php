@@ -22,7 +22,7 @@ $ca->json = true;
 echo '<h2>Test: </h2>';
 $groupid = 43681;
 $page = 1;
-$results = $ca->groups_addresses_index($groupid, $page); 
+$results = $ca->groups_addresses_index($groupid, array('page' => $page)); 
 
 //echo "<h2>results:</h2>$results";
 //echo '<h2>var_dump results:</h2>';
