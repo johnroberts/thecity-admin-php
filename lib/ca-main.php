@@ -2852,6 +2852,6 @@ class CityApi
             return $this->handle_exception(__METHOD__, $e->getMessage());
         }
     }
-    
+
 }
 ?>
