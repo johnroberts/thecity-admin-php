@@ -1,14 +1,14 @@
 <?php
-//
-// ca-config.php
-//
-// API initialization portion of the cityapi class
-//
-// Modify this file to include your API key and user token.
-//
-// You can also configure debug message output handling. 
-//
-//
+/**
+ * ca-config.php
+ *
+ * API initialization portion of the cityapi class
+ *
+ * Modify this file to include your API key and user token.
+ *
+ * You can also configure debug message output handling. 
+ *
+ */
 define("APIKEY","Your City API key here");             // The City API key to use by default
 define("USERTOKEN", "Your user token here");           // The City API user token by default
 

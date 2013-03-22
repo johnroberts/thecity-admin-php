@@ -25,7 +25,7 @@ echo '<pre>';
 echo format_json($results);
 echo '</pre>';
 
-$args = array('page' => 3);
+$args = array('include_checked_out' => 'true', 'page' => 3);
 $results = $ca->checkins_index($args); 
 
 echo '<h2>Formatted JSON results: </h2>';
