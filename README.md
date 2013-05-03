@@ -12,7 +12,7 @@ Quick Start:
 This code gets the number of groups in your City returned as JSON.  
 It assumes ca-main.php is in a lib subdirectory.
 
-```
+```php
 <?php
 
 require_once 'lib/ca-main.php';
@@ -25,5 +25,5 @@ echo $results;
 ```
 
 The v1.1 wrapper library covers 100% of The City Admin API.  
-The PDF doc is current to v0.4.  
-Please refer to the test scripts in the test directory for examples of all endpoint calls. 
+The PDF doc is current to v0.4.  For examples of any endpoint calls not yet in the doc,
+please refer to the test scripts in the test directory, which covers all endpoint calls. 
