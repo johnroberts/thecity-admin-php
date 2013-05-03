@@ -12,7 +12,8 @@ Quick Start:
 This code gets the number of groups in your City returned as JSON.  
 It assumes ca-main.php is in a lib subdirectory.
 
-```<?php
+```
+<?php
 
 require_once 'lib/ca-main.php';
 
