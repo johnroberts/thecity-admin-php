@@ -12,7 +12,8 @@ Quick Start:
 This code gets the number of groups in your City returned as JSON.  
 It assumes ca-main.php is in a lib subdirectory.
 
-<?php
+```<?php
+
 require_once 'lib/ca-main.php';
 
 $ca = new CityApi();
@@ -20,6 +21,7 @@ $results = $ca->groups_count();
 echo $results;
 
 ?>
+```
 
 The v1.1 wrapper library covers 100% of The City Admin API.  
 The PDF doc is current to v0.4.  
