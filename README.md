@@ -24,6 +24,20 @@ echo $results;
 ?>
 ```
 
+
+```php
+<?php
+
+// If the global constants APIKEY and USERTOKEN are not used then they can be set via the constructor.
+$apikey = '8d12345d354fcdeb97cb2a7b83561ac654d4ad53';
+$usertoken = '5a2a12345c031b0a';
+$ca = new CityApi($apikey, $usertoken);
+$results = $ca->groups_count();
+echo $results;
+
+?>
+```
+
 The v1.1 wrapper library covers 100% of The City Admin API.  
 The PDF doc is current to v0.4.  For examples of any endpoint calls not yet in the doc,
 please refer to the test scripts in the test directory, which covers all endpoint calls. 

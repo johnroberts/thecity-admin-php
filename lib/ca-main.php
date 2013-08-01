@@ -77,6 +77,20 @@ class CityApi
 
 		return $hmac_signature;
 	}
+
+
+	/**
+	* If the [optional] params are set then those will be use for the API Key and Token.  
+	* Otherwise the APIKEY and USERTOKEN global constants will be used.
+	*
+	* @param string $apikey (Optional) The City API key to use. Can also be set via the global constant APIKEY.
+	* @param string $usertoken (Optional) The City API user token.  Can also be set via the global constant USERTOKEN.
+	*/
+  public function __construct($apikey = NULL, $usertoken = NULL) {
+  	if(!is_null($apikey)) { $self->key = $apikey; }
+  	if(!is_null($usertoken)) { $self->token = $usertoken; }
+  }
+
 	
 	// test function to try to figure out what's going on with City signature problems
 	public function get_hmac2($string_to_sign)
