@@ -1346,10 +1346,15 @@ class CityApi
 		}
 	}
 
-	public function groups_count()
+	public function groups_count($args = NULL)
 	{
 		try {
-			return $this->call_city('GET', CITYAPIBASEURL . '/groups/count');
+
+			$url = CITYAPIBASEURL . '/groups/count';
+			if(!is_null($args)) {
+				$url = $this->add_querystring($url, $args);
+			}
+			return $this->call_city('GET', $url);
 		} 
 		catch (Exception $e) {
 			return $this->handle_exception(__METHOD__, $e->getMessage());
