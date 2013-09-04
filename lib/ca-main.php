@@ -2518,7 +2518,7 @@ class CityApi
 			if (is_null($args)) // $args is required
 				throw new Exception('args parameter needed.');
 			
-			$url = CITYAPIBASEURL . '/invitations';
+			$url = CITYAPIBASEURL . '/invitations/bulk_invite'; 
 			
 			return $this->call_city('POST', $url, json_encode($args));
 		}
