@@ -1576,6 +1576,18 @@ class CityApi
 			return $this->handle_exception(__METHOD__, $e->getMessage());
 		}
 	}
+	public function groups_checkin_events($group_id)
+	{
+		try {	
+			$this->debug_message (__FUNCTION__);
+			
+			$url = CITYAPIBASEURL . '/groups/' . $group_id . '/checkin_events';
+			return $this->call_city('GET', $url);
+		} 
+		catch (Exception $e) {
+			return $this->handle_exception(__METHOD__, $e->getMessage());
+		}
+	}
 	public function groups_event_attendances_index($groupid = NULL, $args = NULL)
 	{
 		try {	
