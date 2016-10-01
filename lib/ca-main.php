@@ -39,7 +39,12 @@ class CityApi
 		foreach( $fields as $field ) {
 			if($field =='') break; // fix for continuing past end of headers into body
 			if( preg_match('/([^:]+): (.+)/m', $field, $match) ) {
-				$match[1] = preg_replace('/(?<=^|[\x09\x20\x2D])./e', 'strtoupper("\0")', strtolower(trim($match[1])));
+                $match[1] = preg_replace_callback('/(?<=^|[\x09\x20\x2D])./', function($m) {
+                    $newArray = array();
+                    foreach ($m as $value) {
+                        array_push($newArray,strtoupper($value));
+                    }
+                }, strtolower(trim($match[1])));
 				if( isset($retVal[$match[1]]) ) {
 					$retval[$match[1]] = array($retval[$match[1]], $match[2]);
 				} else {
